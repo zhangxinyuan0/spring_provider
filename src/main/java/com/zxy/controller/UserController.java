@@ -1,5 +1,6 @@
 package com.zxy.controller;
 
+import com.zxy.mapper.UserMapper;
 import com.zxy.pojo.User;
 import com.zxy.service.UserService;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +20,7 @@ import java.util.List;
 public class UserController {
     @Resource
     private UserService userService;
-
+    private UserMapper userMapper;
     @RequestMapping(value = "findAll")
     public List<User> findAll(){
         return userService.findAll();
